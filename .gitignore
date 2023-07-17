@@ -1,0 +1,41 @@
+# Django
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+
+# React Native
+node_modules/
+npm-debug.log
+yarn-error.log
+android/build/
+ios/build/
+android/app/build/
+ios/Pods/
+*.iml
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+.DS_Store
+*.swo
+*.swp
+
+# IDE/Editor specific
+.vscode/
+.idea/
+
+# Compiled files
+*.class
+*.jar
+*.war
+*.aar
+*.apk
+*.dex
+*.o
+*.so
+
+# Dependency lock files
+yarn.lock
+package-lock.json
+npm-shrinkwrap.json
