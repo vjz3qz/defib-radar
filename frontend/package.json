@@ -2,10 +2,26 @@
   "name": "defibradar",
   "version": "1.0.0",
   "description": "DefibRadar is a mobile application that allows users to find the nearest Automated External Defibrillators (AEDs) based on their current location.",
-  "main": "index.js",
+  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web"
   },
+  "dependencies": {
+    "expo": "~48.0.18",
+    "expo-status-bar": "~1.4.4",
+    "react": "18.2.0",
+    "react-native": "0.71.8",
+    "react-native-web": "~0.18.10",
+    "react-dom": "18.2.0",
+    "@expo/webpack-config": "^18.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0"
+  },
+  "private": true,
   "author": "Varun Pasupuleti, Sanya Shetty",
   "license": "ISC",
   "repository": {

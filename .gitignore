@@ -20,6 +20,7 @@ ios/Pods/
 .DS_Store
 *.swo
 *.swp
+*.expo
 
 # IDE/Editor specific
 .vscode/
