@@ -1,0 +1,19 @@
+{
+  "name": "defibradar",
+  "version": "1.0.0",
+  "description": "DefibRadar is a mobile application that allows users to find the nearest Automated External Defibrillators (AEDs) based on their current location.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Varun Pasupuleti, Sanya Shetty",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vjz3qz/defib-radar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vjz3qz/defib-radar/issues"
+  },
+  "homepage": "https://github.com/vjz3qz/defib-radar#readme"
+}
