@@ -5,6 +5,7 @@
 __pycache__/
 local_settings.py
 db.sqlite3
+Pipfile.lock
 
 # React Native
 node_modules/
