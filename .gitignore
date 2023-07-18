@@ -41,3 +41,5 @@ ios/Pods/
 yarn.lock
 package-lock.json
 npm-shrinkwrap.json
+
+.env
