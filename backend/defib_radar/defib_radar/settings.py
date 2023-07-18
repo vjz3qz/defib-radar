@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "defib_radar_app", # name of the app logic folder
+    'corsheaders',
+    'rest_framework',
+    "defib_radar_app",  # name of the app logic folder
 ]
 
 MIDDLEWARE = [
@@ -96,7 +98,6 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-
 
 
 # Password validation
