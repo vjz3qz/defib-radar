@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     'corsheaders',
     'rest_framework',
-    "app_logic",  # name of the app logic folder
+    "defib_radar_app",  # name of the app logic folder
 ]
 
 MIDDLEWARE = [
