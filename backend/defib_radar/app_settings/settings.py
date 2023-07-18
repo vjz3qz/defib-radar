@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     'corsheaders',
-    'rest_framework',
+    'rest_framework',  # rest framework
     "defib_radar_app",  # name of the app logic folder
 ]
 
