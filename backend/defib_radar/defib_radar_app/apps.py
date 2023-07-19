@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class AedsConfig(AppConfig):
+class DefibRadarAppConfig(AppConfig):
     default_auto_field = "django.db.models.BigAutoField"
-    name = "aeds"
+    name = "defib_radar_app"

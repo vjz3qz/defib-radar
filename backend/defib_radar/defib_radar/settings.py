@@ -146,3 +146,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000'
 ]
+
+GDAL_LIBRARY_PATH = '/usr/local/lib/libgdal.dylib'  # Update the path if necessary
+

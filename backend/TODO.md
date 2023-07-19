@@ -13,3 +13,5 @@
     - [ ] run migrations to create tables
 - [ ] APIs
     - [ ] define HTTP CRUD ops
+
+Create project plan: breakdown structure, timeline, buffers, etc.
