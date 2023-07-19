@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'django.contrib.gis',
     'corsheaders',
     'rest_framework',
     "defib_radar_app",  # name of the app logic folder
@@ -92,7 +93,7 @@ WSGI_APPLICATION = "defib_radar.wsgi.application"
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': os.environ.get("DB_NAME"),
         'USER': os.environ.get("DB_USERNAME"),
         'PASSWORD': os.environ.get("DB_PASSWORD"),
@@ -147,5 +148,6 @@ CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000'
 ]
 
-GDAL_LIBRARY_PATH = '/usr/local/lib/libgdal.dylib'  # Update the path if necessary
 
+GDAL_LIBRARY_PATH = os.environ.get("GDAL_LIBRARY_PATH")
+GEOS_LIBRARY_PATH = os.environ.get("GEOS_LIBRARY_PATH")
