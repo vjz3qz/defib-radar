@@ -1,12 +1,12 @@
 # TODO
 
 - [ ] Models
-    - [ ] create AED model
-    - [ ] run migrations
-    - [ ] Add json serializer for AED
+    - [x] create Defibrillator model
+    - [x] run migrations
+    - [ ] Add json serializer for Defibrillator
 - [ ] Views
     - [ ] learn about views
-    - [ ] create views for AED CRUD ops?
+    - [ ] create views for Defibrillator CRUD ops?
     - [ ] define URLS for views to URL config in url.py 
 - [ ] Database
     - [ ] ensure set up in settings.py
