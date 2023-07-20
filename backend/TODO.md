@@ -3,7 +3,7 @@
 - [ ] Models/Database
     - [x] create Defibrillator model
     - [x] run migrations to create tables
-    - [ ] ensure database set up in settings.py
+    - [x] ensure database set up in settings.py
     - [ ] Add json serializer for Defibrillator
 - [ ] Views/Routes/APIs
     - [ ] learn about views
