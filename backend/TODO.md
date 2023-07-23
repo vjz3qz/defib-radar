@@ -7,6 +7,12 @@
   - [x] Add json serializer for Defibrillator
 - [ ] Views/Routes/APIs
   - [ ] learn about views
+  - [ ] learn about MVC architecture
+  - [ ] create class based views for Defibrillator HTTP CRUD ops
+  - [ ] define URLS for views to URL config in url.py
+- [ ] Google Maps API
+  - [ ] learn about views
+  - [ ] learn about MVC architecture
   - [ ] create class based views for Defibrillator HTTP CRUD ops
   - [ ] define URLS for views to URL config in url.py
 
