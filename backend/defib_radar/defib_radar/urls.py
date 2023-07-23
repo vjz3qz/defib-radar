@@ -15,7 +15,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from rest_framework import routers
+from defib_radar_app import views
+
+router = routers.DefaultRouter()
+router.register(r'defibrillators', views.DefibrillatorView, 'defibrillator')
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('api/', include(router.urls)),
+]
 
 urlpatterns = [
     path("admin/", admin.site.urls),
