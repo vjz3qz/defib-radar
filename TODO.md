@@ -8,8 +8,8 @@
 - [ ] Views/Routes/APIs
   - [ ] learn about views
   - [ ] learn about MVC architecture
-  - [ ] create class based views for Defibrillator HTTP CRUD ops
-  - [ ] define URLS for views to URL config in url.py
+  - [x] create class based views for Defibrillator HTTP CRUD ops
+  - [x] define URLS for views to URL config in url.py
 - [ ] PulsePoint API
     - [ ] Fetch Defibrillator data
     - [ ] Parse data and store in postgres
