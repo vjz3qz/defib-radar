@@ -4,7 +4,7 @@ DefibRadar is a mobile application that allows users to find the nearest Automat
 
 ## Features
 
-- Fetches AED locations from the PulsePoint API.
+- Fetches AED locations from the Open Data DC's API.
 - Maps and displays nearest AEDs based on user location.
 - Provides routing to the selected AED.
 
@@ -17,7 +17,7 @@ DefibRadar is a mobile application that allows users to find the nearest Automat
 - Frontend: React Native
 - Backend: Django
 - Database: PostgreSQL
-- APIs: Google Maps API, PulsePoint API
+- APIs: Google Maps API, Open Data DC API
 <!---
 ## Getting Started
 
@@ -56,7 +56,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](https://gi
 
 ## Acknowledgments
 
-- Thanks to PulsePoint for providing the API for AED locations.
+- Thanks to Open Data DC for providing the API for AED locations.
 - Thanks to Google Maps for providing mapping and routing functionalities.
 
 -->
