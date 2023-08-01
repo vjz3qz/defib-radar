@@ -11,6 +11,8 @@ DefibRadar is a mobile application that allows users to find the nearest Automat
 ## Future Features
 
 - An emergency guide providing instructions on how to use an AED.
+- A form for users to add/update info about AEDs.
+- AED availability status.
 
 ## Tech Stack
 
@@ -56,7 +58,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](https://gi
 
 ## Acknowledgments
 
-- Thanks to Open Data DC for providing the API for AED locations.
-- Thanks to Google Maps for providing mapping and routing functionalities.
+- Thanks to Open Data DC for providing the data on AED locations.
 
 -->

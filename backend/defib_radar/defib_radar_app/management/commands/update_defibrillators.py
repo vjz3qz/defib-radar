@@ -1,14 +1,18 @@
+import os
 import requests
 from django.core.management.base import BaseCommand
 from django.db import transaction
+from dotenv import load_dotenv
 
 from defib_radar_app.models import Defibrillator
 
+load_dotenv()
+
 class Command(BaseCommand):
-    help = 'Update defibrillators from the public API'
+    help = 'Fetch and update defibrillators from the API'
 
     def handle(self, *args, **options):
-        response = requests.get('https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Health_WebMercator/MapServer/9/query?where=1%3D1&outFields=*&outSR=4326&f=json')
+        response = requests.get(os.environ.get("API_URL"))
         data = response.json()
 
         with transaction.atomic():
