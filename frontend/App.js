@@ -1,16 +1,22 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import MapContainer from "./components/MapContainer";
+import InfoCard from "./components/InfoCard";
 
 export default function App() {
-	return <MapContainer></MapContainer>;
+	return (
+		<SafeAreaView style={styles.container}>
+			<MapContainer></MapContainer>
+			<InfoCard></InfoCard>
+		</SafeAreaView>
+	);
 }
 
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		backgroundColor: "#fff",
-		alignItems: "center",
-		justifyContent: "center",
+		// alignItems: "center",
+		// justifyContent: "center",
 	},
 });

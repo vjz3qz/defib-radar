@@ -1,8 +1,10 @@
 import MapView from "react-native-maps"; // <-- import the MapView component
-export default function MapContainer() {
+import { StyleSheet } from "react-native";
+
+function MapContainer() {
 	return (
 		<MapView
-			style={{ flex: 1 }}
+			style={styles.mapContainer}
 			initialRegion={{
 				latitude: 37.78825,
 				longitude: -122.4324,
@@ -12,3 +14,11 @@ export default function MapContainer() {
 		/>
 	);
 }
+
+const styles = StyleSheet.create({
+	mapContainer: {
+		flex: 1,
+	},
+});
+
+export default MapContainer;
