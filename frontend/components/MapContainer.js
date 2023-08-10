@@ -26,11 +26,11 @@ export default function MapContainer() {
 
   //FETCH MARKER DATA FROM BACKEND
   useEffect(() => {
-    axios.get("url/for/markers")
+    axios.get("http://localhost:8000/api/defibrillators/")
       .then((response) => setMarkers(response.data))
       .catch((error) => console.log('Error fetching data:', error))
   },[]);
-  
+
   const [markers, setMarkers] = useState([
     {
       title: "Apple",
