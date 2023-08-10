@@ -14,7 +14,7 @@ class DefibrillatorView(viewsets.ModelViewSet):
 #     all_defibs = {}
 #     if 'name' in request.GET:
 #         name = request.GET['name']
-#         url = 'https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Health_WebMercator/MapServer/9/query?where=1%3D1&outFields=*&outSR=4326&f=json' % name
+#         url = 'from .env' % name
 #         response = requests.get(url)
 #         data = response.json()
 #         defibs = data['defibs']

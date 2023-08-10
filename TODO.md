@@ -33,6 +33,37 @@
 
 
 <!-- 
+Routing Functionality:
+
+This is important because your users will need to know how to get from their current location to the marker's location.
+For this, you could use third-party services like Mapbox, Google Maps Directions API, or any other free service you may find.
+Once you receive the route information from these services, you can draw the route on the MapView using the Polyline component.
+Fetching Real Marker Data:
+
+While you have hardcoded marker data right now, eventually you will need to integrate with your backend to fetch real markers.
+This will involve setting up API calls, handling responses, and error scenarios.
+Enhancing the InfoCard:
+
+Make sure the InfoCard has all the necessary details your users might need.
+Incorporate the button to initiate routing from the user's location to the marker. When this button is clicked, trigger the routing functionality to get and display the route.
+Enhanced User Experience:
+
+Consider adding loading indicators while fetching data or calculating routes.
+Handle possible error scenarios gracefully, like if there's no internet connection, the routing service is unavailable, etc.
+Maybe add features like zooming into a route, showing estimated time and distance, etc.
+Optimizations and Testing:
+
+Once all functionalities are in place, test them on various devices and screen sizes to ensure they work smoothly.
+Optimize performance, especially if you notice lag when loading routes or fetching marker data.
+Additional Features (if desired):
+
+Turn-by-turn navigation.
+User reviews or ratings for locations.
+Search functionality to find places.
+
+
+
+
 Create an endpoint to serve AED data: Once your database is populated with AED data, you'll need to create endpoints in your Django app to serve this data to the frontend.
 
 Set up Google Maps API in your frontend: You'll need to include the Google Maps JavaScript API in your frontend to display maps and routes.
@@ -53,4 +84,12 @@ Allow users to add new AEDs: Create a form in your frontend to add new AEDs, and
 
 User authentication and authorization (Optional): If you want to restrict access or editing rights to certain users, you could implement a system for user registration and login. Django has built-in tools to help with this.
 
-Create project plan: breakdown structure, timeline, buffers, etc. -->
+Create project plan: breakdown structure, timeline, buffers, etc. 
+
+
+
+
+
+
+
+-->

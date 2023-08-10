@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import * as Location from "expo-location";
 import { View } from "react-native";
 import InfoCard from "./InfoCard";
+import axios from 'axios';
 
 export default function MapContainer() {
   const initialLatitude = 37.78825;
@@ -24,6 +25,12 @@ export default function MapContainer() {
   const [errorMsg, setErrorMsg] = useState(null);
 
   //FETCH MARKER DATA FROM BACKEND
+  useEffect(() => {
+    axios.get("url/for/markers")
+      .then((response) => setMarkers(response.data))
+      .catch((error) => console.log('Error fetching data:', error))
+  },[]);
+  
   const [markers, setMarkers] = useState([
     {
       title: "Apple",
@@ -53,6 +60,11 @@ export default function MapContainer() {
       });
     })();
   }, []);
+
+  
+
+
+
 
   return (
     <View style={{ flex: 1 }}>

@@ -144,9 +144,21 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-CORS_ORIGIN_WHITELIST = [
-    'http://localhost:3000'
-]
+
+# Get the environment variable or default to 'development'
+DJANGO_ENV = os.environ.get('DJANGO_ENV', 'development')
+
+if DJANGO_ENV == 'production':
+    CORS_ALLOW_ALL_ORIGINS = False
+    CORS_ORIGIN_WHITELIST = [
+        'http://your-production-domain.com',
+        'https://your-production-domain.com', 
+        # Add any other origins you want to allow
+    ]
+    # Other production-specific settings
+else:
+    CORS_ALLOW_ALL_ORIGINS = True
+    # Other development-specific settings
 
 
 GDAL_LIBRARY_PATH = os.environ.get("GDAL_LIBRARY_PATH")
