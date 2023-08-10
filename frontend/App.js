@@ -1,13 +1,13 @@
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import React, { useState } from "react";
 import MapContainer from "./components/MapContainer";
 import InfoCard from "./components/InfoCard";
 
 export default function App() {
 	return (
 		<SafeAreaView style={styles.container}>
-			<MapContainer></MapContainer>
-			<InfoCard></InfoCard>
+			<MapContainer />
 		</SafeAreaView>
 	);
 }

@@ -16,9 +16,8 @@
     - [ ] script that regularly fetches and updates data: Cron Job (Varun)
     - [ ] endpoint that serves AED data to frontend
 - [ ] Frontend
-    - [ ] Google Maps API
-        - [ ] Display Map in frontend
-        - [ ] Enable routing: current location to destination coordinate
+    - [x] Display Map in frontend
+    - [ ] Enable routing: current location to destination coordinate
     - [ ] support CRUD ops to backend: get list, get id
     - [ ] React components
     - [ ] tailwind styling
