@@ -15,7 +15,6 @@ export default function MapContainer() {
 
   const [selectedMarkerData, setSelectedMarkerData] = useState(null);
   const [cardOpen, setCardOpen] = useState(false);
-  const [errorMsg, setErrorMsg] = useState(null);
   const [markers, setMarkers] = useState([
     {
       title: "Apple",
@@ -33,10 +32,10 @@ export default function MapContainer() {
     getCurrentPosition();
   }, []);
 
-  async function fetchMarkers() {
+  const fetchMarkers = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8000/api/defibrillators/"
+        process.env.BACKEND_URL
       );
       setMarkers(response.data);
     } catch (error) {
@@ -44,10 +43,11 @@ export default function MapContainer() {
     }
   }
 
-  async function getCurrentPosition() {
+  const getCurrentPosition = async () => {
     const { status } = await Location.requestForegroundPermissionsAsync();
     if (status !== "granted") {
-      setErrorMsg("Permission to access location was denied");
+      Alert.alert("Location Permission", "Permission to access location was denied");
+      console.log("Permission to access location was denied");
       return;
     } else {
       let location = await Location.getCurrentPositionAsync({});
@@ -63,7 +63,7 @@ export default function MapContainer() {
   function Markers() {
     return markers.map((marker, index) => (
       <Marker
-        key={index}
+        key={marker.id || index}
         coordinate={marker.latlng}
         title={marker.title}
         description={marker.description}

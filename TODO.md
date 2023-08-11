@@ -33,6 +33,20 @@
 
 
 <!-- 
+
+Static Route Line: Display the route line on the map from the start to the destination. This gives users a visual representation of the path to follow.
+
+
+
+Current Location Marker: Display the user's current location on the map with an updating marker. Combined with the static route line, this helps the user see where they are in relation to the planned route.
+
+Basic Off-Route Detection: If the user goes off the route, display a simple notification suggesting they return to the route. This won't offer re-routing but serves as a basic indicator when they've gone astray.
+
+Distance & ETA: Provide an estimated time of arrival and the remaining distance to the destination. This can be calculated based on the remaining steps and average speeds for the type of roads.
+
+List of Directions: Instead of dynamic voice prompts or constant updates, provide a static list of turn-by-turn directions (e.g., "Turn right on Main St.", "Continue for 2 miles", "Turn left on Elm St."). The user can refer to this list as they navigate.
+
+Manual "Next Step" Button: Instead of automated prompts, provide a button for users to manually move to the next navigation step when they've completed the current one.
 Routing Functionality:
 
 This is important because your users will need to know how to get from their current location to the marker's location.
