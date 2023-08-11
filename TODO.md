@@ -20,7 +20,7 @@
     - [x] Display loading screen before data/current location gets rendered
     - [ ] Enable routing: current location to destination coordinate
       - [ ] Fix so that routing shows up at current location, not last updated loc. route button should trigger getting loc again (Varun)
-        - [ ] Poentially add transition get current location
+        - [ ] Poentially add transition get current location and polyline
       - [ ] Parse response URL to get route coordinates (Sanya)
       - [ ] Display directions directions.js (Sanya)
     - [x] support CRUD ops to backend: get list
