@@ -1,8 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import React, { useState } from "react";
-import MapContainer from "./components/MapContainer";
-import InfoCard from "./components/InfoCard";
+import MapContainer from "./screens/MapContainer";
 
 export default function App() {
 	return (

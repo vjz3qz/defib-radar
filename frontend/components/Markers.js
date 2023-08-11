@@ -2,7 +2,7 @@ import { Marker } from "react-native-maps";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-export default function Markers() {
+export default function Markers({ onMarkerPress }) {
   const [markers, setMarkers] = useState([
     {
       title: "Apple",
@@ -33,7 +33,7 @@ export default function Markers() {
       coordinate={marker.latlng}
       title={marker.title}
       description={marker.description}
-      onPress={handleMarkerPress(marker)}
+      onPress={() => onMarkerPress(marker)}
     />
   ));
 }

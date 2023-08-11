@@ -5,7 +5,8 @@ import { Button } from "@rneui/themed";
 import { HStack } from "react-native-flex-layout";
 import { Iconify } from "react-native-iconify";
 
-function InfoCard({ data }) {
+function InfoCard({ data, handleButtonPress }) {
+
   return (
     <View style={styles.card}>
       <View style={styles.infoContainer}>
@@ -53,6 +54,7 @@ function InfoCard({ data }) {
                 },
               ]}
               title={"Walk"} // add time
+			        onPress={() => handleButtonPress(true, data.latlng.latitude, data.latlng.longitude)}
             ></Button>
             <Button
               icon={
@@ -75,6 +77,7 @@ function InfoCard({ data }) {
                 },
               ]}
               title={"Drive"} // add time
+			        onPress={() => handleButtonPress(false, data.latlng.latitude, data.latlng.longitude)}
             ></Button>
           </HStack>
         </View>
