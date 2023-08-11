@@ -5,10 +5,16 @@ import { Button } from "@rneui/themed";
 import { HStack } from "react-native-flex-layout";
 import { Iconify } from "react-native-iconify";
 
-function InfoCard({ data, handleButtonPress }) {
+function InfoCard({ data, handleButtonPress, handleXPress }) {
 
   return (
     <View style={styles.card}>
+    <Button 
+      onPress={handleXPress}
+      buttonStyle={styles.exitButton}
+    >
+      X
+    </Button>
       <View style={styles.infoContainer}>
         <Text style={styles.title}>{data.name || "Name"}</Text>
 
@@ -148,6 +154,12 @@ const styles = StyleSheet.create({
     height: 24,
     marginRight: 4,
   },
+  exitButton: {
+    backgroundColor: "#4285F4",
+    width: 36,
+    height: 36,
+    borderRadius: 20, 
+  }
 });
 
 export default InfoCard;

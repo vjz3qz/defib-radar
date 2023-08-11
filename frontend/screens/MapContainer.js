@@ -34,12 +34,32 @@ export default function MapContainer() {
           showDirections && routeDetails ? routeDetails.coordinates : null
         }
       />
-      {cardOpen && (
+    {cardOpen && (
+      <View style={styles.infoCardContainer}>
         <InfoCard
           data={selectedMarkerData}
           handleButtonPress={handleButtonPress}
+          handleXPress={() => setCardOpen(false)}
         />
-      )}
+      </View>
+    )}
     </View>
   );
 }
+
+
+import { StyleSheet } from 'react-native';
+
+const styles = StyleSheet.create({
+  mapContainer: {
+    flex: 1
+  },
+  infoCardContainer: {
+    position: 'absolute',
+    bottom: 0, 
+    left: 0,
+    right: 0,
+    padding: 10,
+    margin: 10
+  }
+});
