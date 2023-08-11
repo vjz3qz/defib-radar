@@ -11,7 +11,7 @@ export default function Markers({ onMarkerPress }) {
       coordinate={marker.latlng}
       title={marker.name}
       description={marker.description}
-      onPress={() => onMarkerPress(marker)}
+      onPress={() => onMarkerPress ? onMarkerPress(marker) : null }
     />
   ));
 }

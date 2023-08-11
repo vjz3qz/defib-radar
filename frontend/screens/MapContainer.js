@@ -29,7 +29,7 @@ export default function MapContainer() {
     <View style={{ flex: 1 }}>
     {/* {showDirections && routeDetails.directions} create a Directions.js to display. also a way to exit showing directions, show eta/time left below? */}
       <Map
-        onMarkerPress={handleMarkerPress}
+        onMarkerPress={showDirections ? null : handleMarkerPress}
         coordinates={
           showDirections && routeDetails ? routeDetails.coordinates : null
         }

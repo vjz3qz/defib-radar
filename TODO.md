@@ -23,6 +23,8 @@
         - [ ] Poentially add transition get current location and polyline
       - [ ] Parse response URL to get route coordinates (Sanya)
       - [ ] Display directions directions.js (Sanya)
+      - [ ] Exit directions button (Sanya)
+      - [ ] Add button to get current location (Varun)
     - [x] support CRUD ops to backend: get list
     - [ ] React components
     - [ ] Clean and refactor code
