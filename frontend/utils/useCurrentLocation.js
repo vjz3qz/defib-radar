@@ -10,10 +10,10 @@ export const useCurrentLocation = () => {
   });
 
   useEffect(() => {
-    getCurrentPosition().finally(() => setIsLoading(false));
+    getCurrentLocation().finally(() => setIsLoading(false));
   }, []);
 
-  const getCurrentPosition = async () => {
+  const getCurrentLocation = async () => {
     const { status } = await Location.requestForegroundPermissionsAsync();
     if (status !== "granted") {
       Alert.alert(
@@ -24,12 +24,15 @@ export const useCurrentLocation = () => {
       return;
     } else {
       let locationData = await Location.getCurrentPositionAsync({});
+      lat = locationData.coords.latitude;
+      lng = locationData.coords.longitude;
       setLocation({
-        latitude: locationData.coords.latitude,
-        longitude: locationData.coords.longitude,
+        latitude: lat,
+        longitude: lng,
       });
+      return { lat, lng }
     }
   };
 
-  return { location, locationIsLoading: isLoading };
+  return { location, getCurrentLocation, locationIsLoading: isLoading };
 }

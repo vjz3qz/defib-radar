@@ -1,10 +1,10 @@
 import MapView, { Polyline } from "react-native-maps";
 import React, { useState, useEffect } from "react";
 import Markers from "../components/Markers";
-import LocationContext from "../contexts/LocationContexts";
+import { useCurrentLocation } from "../utils/useCurrentLocation";
 
 export default function Map({ onMarkerPress, coordinates }) {
-  const location = React.useContext(LocationContext);
+  const { location } = useCurrentLocation();
   const [region, setRegion] = useState({
     latitude: location.latitude,
     longitude: location.longitude,

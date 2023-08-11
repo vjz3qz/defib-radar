@@ -8,10 +8,10 @@ export const useLocation = () => {
 };
 
 export const LocationProvider = ({ children }) => {
-  const { location } = useCurrentLocation();
+  const locationHook = useCurrentLocation();
   
   return (
-    <LocationContext.Provider value={location}>
+    <LocationContext.Provider value={locationHook}>
       {children}
     </LocationContext.Provider>
   );

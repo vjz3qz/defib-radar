@@ -3,11 +3,11 @@ import { View } from "react-native";
 import InfoCard from "../components/InfoCard";
 import Map from "../components/Map";
 import { useRoute } from "../utils/useRoute";
-import LocationContext from "../contexts/LocationContexts";
+import { useCurrentLocation } from "../utils/useCurrentLocation";
 
 export default function MapContainer() {
-  const location = React.useContext(LocationContext);
-  const { routeDetails, setRouteDetails, getRouteDetails } = useRoute();
+  const { getCurrentLocation } = useCurrentLocation();
+  const { routeDetails, getRouteDetails } = useRoute();
 
   const [selectedMarkerData, setSelectedMarkerData] = useState(null);
   const [cardOpen, setCardOpen] = useState(false);
@@ -19,21 +19,15 @@ export default function MapContainer() {
   };
 
   const handleButtonPress = async (walking, endLat, endLng) => {
-    //await getRouteDetails(walking, endLat, endLng);
-
-    // remove this hard coded set route details later
-    setRouteDetails({
-      coordinates: [
-        { latitude: location.latitude, longitude: location.longitude },
-        { latitude: endLat, longitude: endLng },
-      ],
-    });
+    const { lat, lng } = await getCurrentLocation();
+    await getRouteDetails(walking, lat, lng, endLat, endLng);
     setShowDirections(true);
     setCardOpen(false);
   };
 
   return (
     <View style={{ flex: 1 }}>
+    {/* {showDirections && routeDetails.directions} create a Directions.js to display. also a way to exit showing directions, show eta/time left below? */}
       <Map
         onMarkerPress={handleMarkerPress}
         coordinates={
@@ -46,7 +40,6 @@ export default function MapContainer() {
           handleButtonPress={handleButtonPress}
         />
       )}
-      {/* {showDirections && routeDetails.directions} create a Directions.js to display. also a way to exit showing directions */}
     </View>
   );
 }
