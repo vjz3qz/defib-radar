@@ -3,34 +3,19 @@ import React, { useState, useEffect } from "react";
 import * as Location from "expo-location";
 import { View } from "react-native";
 import InfoCard from "./InfoCard";
-import axios from 'axios';
+import axios from "axios";
 
 export default function MapContainer() {
-  const initialLatitude = 37.78825;
-  const initialLongitude = -122.4324;
-
   const [region, setRegion] = useState({
-    latitude: initialLatitude,
-    longitude: initialLongitude,
+    latitude: 37.78825,
+    longitude: -122.4324,
     latitudeDelta: 0.0922,
     longitudeDelta: 0.0421,
   });
-  const onRegionChange = (region) => {
-    setRegion(region);
-  };
 
   const [selectedMarkerData, setSelectedMarkerData] = useState(null);
   const [cardOpen, setCardOpen] = useState(false);
-
   const [errorMsg, setErrorMsg] = useState(null);
-
-  //FETCH MARKER DATA FROM BACKEND
-  useEffect(() => {
-    axios.get("http://localhost:8000/api/defibrillators/")
-      .then((response) => setMarkers(response.data))
-      .catch((error) => console.log('Error fetching data:', error))
-  },[]);
-
   const [markers, setMarkers] = useState([
     {
       title: "Apple",
@@ -44,13 +29,27 @@ export default function MapContainer() {
   ]);
 
   useEffect(() => {
-    (async () => {
-      let { status } = await Location.requestForegroundPermissionsAsync({});
-      if (status !== "granted") {
-        setErrorMsg("Permission to access location was denied");
-        return;
-      }
+    fetchMarkers();
+    getCurrentPosition();
+  }, []);
 
+  async function fetchMarkers() {
+    try {
+      const response = await axios.get(
+        "http://localhost:8000/api/defibrillators/"
+      );
+      setMarkers(response.data);
+    } catch (error) {
+      console.log("Error fetching data:", error);
+    }
+  }
+
+  async function getCurrentPosition() {
+    const { status } = await Location.requestForegroundPermissionsAsync();
+    if (status !== "granted") {
+      setErrorMsg("Permission to access location was denied");
+      return;
+    } else {
       let location = await Location.getCurrentPositionAsync({});
       setRegion({
         latitude: location.coords.latitude,
@@ -58,34 +57,33 @@ export default function MapContainer() {
         latitudeDelta: 0.0922,
         longitudeDelta: 0.0421,
       });
-    })();
-  }, []);
+    }
+  }
 
-  
-
-
-
+  function Markers() {
+    return markers.map((marker, index) => (
+      <Marker
+        key={index}
+        coordinate={marker.latlng}
+        title={marker.title}
+        description={marker.description}
+        onPress={() => {
+          setSelectedMarkerData(marker);
+          setCardOpen(true);
+        }}
+      />
+    ));
+  }
 
   return (
     <View style={{ flex: 1 }}>
       <MapView
         style={{ flex: 1 }}
         region={region}
-        onRegionChange={onRegionChange}
+        onRegionChange={setRegion}
         showsUserLocation={true}
       >
-        {markers.map((marker, index) => (
-          <Marker
-            key={index}
-            coordinate={marker.latlng}
-            title={marker.title}
-            description={marker.description}
-            onPress={() => {
-              setSelectedMarkerData(marker);
-              setCardOpen(true);
-            }}
-          />
-        ))}
+        <Markers />
       </MapView>
       {cardOpen && <InfoCard data={selectedMarkerData} />}
     </View>
