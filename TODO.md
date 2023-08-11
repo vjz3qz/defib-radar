@@ -14,14 +14,19 @@
     - [x] Fetch Defibrillator data
     - [ ] Parse data and store in postgres (Sanya)
     - [ ] script that regularly fetches and updates data: Cron Job (Varun)
-    - [ ] endpoint that serves AED data to frontend
+    - [ ] endpoint that serves AED data to frontend, set up proxy in package.json
 - [ ] Frontend
     - [x] Display Map in frontend
     - [x] Display loading screen before data/current location gets rendered
     - [ ] Enable routing: current location to destination coordinate
-    - [ ] support CRUD ops to backend: get list, get id
+      - [ ] Fix so that routing shows up at current location, not last updated loc. route button should trigger getting loc again
+        - [ ] Poentially add transition get current location
+      - [ ] Parse response URL to get route coordinates
+      - [ ] Display directions directions.js
+    - [x] support CRUD ops to backend: get list
     - [ ] React components
-    - [ ] tailwind styling
+    - [ ] Clean and refactor code
+    - [ ] styling
 - [ ] Testing
     - [ ] Write tests for Django views
     - [ ] Write tests for React components 
