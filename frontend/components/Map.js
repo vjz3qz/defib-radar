@@ -2,10 +2,9 @@ import MapView from "react-native-maps";
 import React, { useState, useEffect } from "react";
 import * as Location from "expo-location";
 import { Alert } from "react-native";
-import { Polyline } from "react-native-maps";
 import Markers from "../components/Markers";
 
-export default function Map({ onMarkerPress, showDirections, coordinates }) {
+export default function Map({ onMarkerPress, coordinates }) {
   const [region, setRegion] = useState({
     latitude: 37.78825,
     longitude: -122.4324,
@@ -45,11 +44,11 @@ export default function Map({ onMarkerPress, showDirections, coordinates }) {
       
         <Markers onMarkerPress={onMarkerPress} />
       
-      {showDirections && coordinates && (
-        <Polyline
+      {coordinates && (
+        <MapView.Polyline
           coordinates={coordinates}
-          strokeWidth={3}
-          strokeColor="blue"
+          strokeWidth={4}
+          strokeColor="#007AFF"
         />
       )}
         
