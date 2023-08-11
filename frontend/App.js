@@ -2,11 +2,15 @@ import { StatusBar } from "expo-status-bar";
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import React, { useState } from "react";
 import MapContainer from "./screens/MapContainer";
+import { LocationProvider } from "./contexts/LocationContexts";
+
 
 export default function App() {
 	return (
 		<SafeAreaView style={styles.container}>
-			<MapContainer />
+			<LocationProvider>
+				<MapContainer />
+			</LocationProvider>
 		</SafeAreaView>
 	);
 }

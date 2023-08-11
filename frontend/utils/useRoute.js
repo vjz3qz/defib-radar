@@ -1,14 +1,14 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
+import LocationContext from "../contexts/LocationContexts";
 
-export const getRoute = () => {
+export const useRoute = () => {
 
     const [routeDetails, setRouteDetails] = useState(null);
+    const { location, setLocation } = React.useContext(LocationContext);
 
     const getRouteDetails = async (
       walking,
-      startLat,
-      startLng,
       endLat,
       endLng
     ) => {
@@ -17,7 +17,7 @@ export const getRoute = () => {
         const response = await axios.get(
           `${process.env.ROUTING_URL}?destination=${endLat + "," + endLng}
           &mode=${walking ? "walking" : "driving"}
-          &origin=${startLat + "," + startLng}
+          &origin=${location.latitude + "," + location.longitude}
           &key=${process.env.GOOGLE_MAPS_API_KEY}`
         );
     

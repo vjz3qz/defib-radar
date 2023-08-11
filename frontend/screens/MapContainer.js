@@ -2,9 +2,13 @@ import React, { useState } from "react";
 import { View } from "react-native";
 import InfoCard from "../components/InfoCard";
 import Map from "../components/Map";
-import { routeDetails, setRouteDetails, getRouteDetails } from "../utils/Directions";
+import { useRoute } from "../utils/useRoute";
+import LocationContext from "../contexts/LocationContexts";
 
 export default function MapContainer() {
+  const { location, setLocation } = React.useContext(LocationContext);
+  const { routeDetails, setRouteDetails, getRouteDetails } = useRoute();
+
   const [selectedMarkerData, setSelectedMarkerData] = useState(null);
   const [cardOpen, setCardOpen] = useState(false);
   const [showDirections, setShowDirections] = useState(false);
@@ -15,16 +19,12 @@ export default function MapContainer() {
   };
 
   const handleButtonPress = async (walking, endLat, endLng) => {
-    // await getRouteDetails(
-    //   walking,
-    //   37.78825,
-    //   -122.4324,
-    //   endLat,
-    //   endLng
-    // );
+    //await getRouteDetails(walking, endLat, endLng);
+
+    // remove this hard coded set route details later
     setRouteDetails({
       coordinates: [
-        { latitude: 37.78825, longitude: -122.4324 },
+        { latitude: location.latitude, longitude: location.longitude },
         { latitude: endLat, longitude: endLng },
       ],
     });
