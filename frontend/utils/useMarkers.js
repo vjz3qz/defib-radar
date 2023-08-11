@@ -5,13 +5,16 @@ export const useMarkers = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [markers, setMarkers] = useState([
       {
-        title: "Apple",
+        name: "Apple",
         description:
           "Apple Park is Apple's corporate headquarters located in Cupertino, California, United States.",
         latlng: {
           latitude: 37.330928,
           longitude: -122.007866,
         },
+        address_line1: "1 Apple Park Way",
+        city: "Cupertino",
+        state: "CA",
       },
     ]);
     useEffect(() => {

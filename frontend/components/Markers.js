@@ -9,7 +9,7 @@ export default function Markers({ onMarkerPress }) {
     <Marker
       key={marker.id || index}
       coordinate={marker.latlng}
-      title={marker.title}
+      title={marker.name}
       description={marker.description}
       onPress={() => onMarkerPress(marker)}
     />
