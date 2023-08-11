@@ -1,6 +1,5 @@
-import React, { createContext, useState, useEffect, useContext } from "react";
-import * as Location from "expo-location";
-import { Alert } from "react-native";
+import React, { createContext, useContext } from "react";
+import { useCurrentLocation } from "../utils/useCurrentLocation";
 
 const LocationContext = createContext();
 
@@ -9,35 +8,10 @@ export const useLocation = () => {
 };
 
 export const LocationProvider = ({ children }) => {
-  const [location, setLocation] = useState({
-    latitude: 37.78825,
-    longitude: -122.4324,
-  });
-
-  useEffect(() => {
-    getCurrentPosition();
-  }, []);
-
-  const getCurrentPosition = async () => {
-    const { status } = await Location.requestForegroundPermissionsAsync();
-    if (status !== "granted") {
-      Alert.alert(
-        "Location Permission",
-        "Permission to access location was denied"
-      );
-      console.log("Permission to access location was denied");
-      return;
-    } else {
-      let locationData = await Location.getCurrentPositionAsync({});
-      setLocation({
-        latitude: locationData.coords.latitude,
-        longitude: locationData.coords.longitude,
-      });
-    }
-  };
-
+  const { location } = useCurrentLocation();
+  
   return (
-    <LocationContext.Provider value={{ location, setLocation }}>
+    <LocationContext.Provider value={location}>
       {children}
     </LocationContext.Provider>
   );

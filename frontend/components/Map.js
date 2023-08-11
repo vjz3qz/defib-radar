@@ -4,7 +4,7 @@ import Markers from "../components/Markers";
 import LocationContext from "../contexts/LocationContexts";
 
 export default function Map({ onMarkerPress, coordinates }) {
-  const { location, setLocation } = React.useContext(LocationContext);
+  const location = React.useContext(LocationContext);
   const [region, setRegion] = useState({
     latitude: location.latitude,
     longitude: location.longitude,

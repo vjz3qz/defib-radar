@@ -6,7 +6,7 @@ import { useRoute } from "../utils/useRoute";
 import LocationContext from "../contexts/LocationContexts";
 
 export default function MapContainer() {
-  const { location, setLocation } = React.useContext(LocationContext);
+  const location = React.useContext(LocationContext);
   const { routeDetails, setRouteDetails, getRouteDetails } = useRoute();
 
   const [selectedMarkerData, setSelectedMarkerData] = useState(null);

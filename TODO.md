@@ -17,6 +17,7 @@
     - [ ] endpoint that serves AED data to frontend
 - [ ] Frontend
     - [x] Display Map in frontend
+    - [x] Display loading screen before data/current location gets rendered
     - [ ] Enable routing: current location to destination coordinate
     - [ ] support CRUD ops to backend: get list, get id
     - [ ] React components

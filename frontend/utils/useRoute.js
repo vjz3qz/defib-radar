@@ -5,7 +5,7 @@ import LocationContext from "../contexts/LocationContexts";
 export const useRoute = () => {
 
     const [routeDetails, setRouteDetails] = useState(null);
-    const { location, setLocation } = React.useContext(LocationContext);
+    const location = React.useContext(LocationContext);
 
     const getRouteDetails = async (
       walking,
