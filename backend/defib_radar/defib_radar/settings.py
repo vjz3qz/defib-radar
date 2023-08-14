@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 from dotenv import load_dotenv
+import dj_database_url
 import os
 
 # load .env file
@@ -84,15 +85,10 @@ WSGI_APPLICATION = "defib_radar.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": BASE_DIR / "db.sqlite3",
-#     }
-# }
 
 DATABASES = {
-    'default': {
+    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL')),
+    'local': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': os.environ.get("DB_NAME"),
         'USER': os.environ.get("DB_USERNAME"),
