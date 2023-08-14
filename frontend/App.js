@@ -7,23 +7,23 @@ import { useMarkers } from "./utils/useMarkers";
 import { useCurrentLocation } from "./utils/useCurrentLocation";
 
 export default function Appn() {
-  const { locationIsLoading } = useCurrentLocation();
-  const { markersIsLoading } = useMarkers();
-  
-  return locationIsLoading || markersIsLoading ? (
-    <LoadingScreen />
-  ) : (
-    <SafeAreaView style={styles.container}>
-      <MapContainer />
-    </SafeAreaView>
-  );
+	const { locationIsLoading } = useCurrentLocation();
+	const { markersIsLoading } = useMarkers();
+
+	return locationIsLoading || markersIsLoading ? (
+		<LoadingScreen />
+	) : (
+		<View style={styles.container}>
+			<MapContainer />
+		</View>
+	);
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    // alignItems: "center",
-    // justifyContent: "center",
-  },
+	container: {
+		flex: 1,
+		backgroundColor: "#fff",
+		// alignItems: "center",
+		// justifyContent: "center",
+	},
 });

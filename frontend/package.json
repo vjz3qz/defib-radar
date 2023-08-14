@@ -11,6 +11,7 @@
 	},
 	"dependencies": {
 		"@expo/webpack-config": "^18.0.1",
+		"@mapbox/polyline": "^1.2.0",
 		"@react-native-community/geolocation": "^3.0.6",
 		"@react-navigation/native": "^6.1.7",
 		"@react-navigation/stack": "^6.3.17",
