@@ -1,51 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
 import polyline from "@mapbox/polyline";
+import sampleData from "../data/mockDirections";
 
 export const useRoute = () => {
-	const mockApiResponse = {
-		status: "OK",
-		routes: [
-			{
-				bounds: {
-					northeast: { lat: 40.7766, lng: -73.982 },
-					southwest: { lat: 40.7488, lng: -74.006 },
-				},
-				legs: [
-					{
-						start_location: { lat: 40.748817, lng: -73.985428 },
-						end_location: { lat: 40.748817, lng: -73.985428 },
-						steps: [
-							{
-								html_instructions: "Head <b>north</b> on <b>5th Ave</b>",
-								distance: { text: "0.2 mi", value: 322 },
-								duration: { text: "1 min", value: 78 },
-								start_location: { lat: 40.748817, lng: -73.985428 },
-								end_location: { lat: 40.751551, lng: -73.9856 },
-								polyline: {
-									points:
-										"a~l~Fjk~uOnzh@vlbBtc~@tsE`vnApw{A`dw@~w\\|tNtqf@l{Yd_Fblh@rxo@",
-								},
-								maneuver: "head-north",
-							},
-							// {
-							// 	html_instructions: "Turn <b>left</b> at <b>42nd St</b>",
-							// 	distance: { text: "0.1 mi", value: 160 },
-							// 	duration: { text: "1 min", value: 34 },
-							// 	start_location: { lat: 40.751551, lng: -73.9856 },
-							// 	end_location: { lat: 40.7524, lng: -73.9822 },
-							// 	polyline: {
-							// 		points: "gqo~FjtyuO?????????????????????????????????????????????"
-							// 	},
-							// 	maneuver: "turn-left"
-							// },
-							// ... more steps as needed
-						],
-					},
-				],
-			},
-		],
-	};
+	const mockApiResponse = sampleData;
 
 	const [routeDetails, setRouteDetails] = useState(null);
 
