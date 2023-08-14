@@ -12,9 +12,8 @@
   - [x] define URLS for views to URL config in url.py
 - [ ] Open Data DC API
     - [x] Fetch Defibrillator data
-    - [ ] Parse data and store in postgres (Sanya)
-    - [ ] script that regularly fetches and updates data: Cron Job (Varun)
-    - [ ] endpoint that serves AED data to frontend, set up proxy in package.json (Varun)
+    - [x] Parse data and store in postgres (Varun)
+    - [ ] endpoint that serves AED data to frontend, set up proxy in package.json, test if working with front end display (Varun)
 - [ ] Frontend
     - [x] Display Map in frontend
     - [x] Display loading screen before data/current location gets rendered
@@ -34,6 +33,7 @@
     - [ ] Write tests for Google Maps API
 - [ ] Deployment
     - [ ] Deploy to AWS
+    - [ ] script that regularly fetches and updates data: Cron Job
     - [ ] Set up production database
     - [ ] Migrate data
 
