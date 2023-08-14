@@ -1,45 +1,45 @@
 {
-  "name": "defibradar",
-  "version": "1.0.0",
-  "description": "DefibRadar is a mobile application that allows users to find the nearest Automated External Defibrillators (AEDs) based on their current location.",
-  "main": "node_modules/expo/AppEntry.js",
-  "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web"
-  },
-  "dependencies": {
-    "@expo/webpack-config": "^18.0.1",
-    "@react-native-community/geolocation": "^3.0.6",
-    "@react-navigation/native": "^6.1.7",
-    "@react-navigation/stack": "^6.3.17",
-    "@rneui/base": "^4.0.0-rc.7",
-    "@rneui/themed": "^4.0.0-rc.8",
-    "axios": "^1.4.0",
-    "expo": "^48.0.20",
-    "expo-location": "~15.1.1",
-    "expo-status-bar": "~1.4.4",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-native": "0.71.8",
-    "react-native-flex-layout": "^0.1.5",
-    "react-native-iconify": "^0.2.10",
-    "react-native-maps": "1.7.1",
-    "react-native-web": "~0.18.10"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.20.0"
-  },
-  "private": true,
-  "author": "Varun Pasupuleti, Sanya Shetty",
-  "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vjz3qz/defib-radar.git"
-  },
-  "bugs": {
-    "url": "https://github.com/vjz3qz/defib-radar/issues"
-  },
-  "homepage": "https://github.com/vjz3qz/defib-radar#readme"
+	"name": "defibradar",
+	"version": "1.0.0",
+	"description": "DefibRadar is a mobile application that allows users to find the nearest Automated External Defibrillators (AEDs) based on their current location.",
+	"main": "node_modules/expo/AppEntry.js",
+	"scripts": {
+		"start": "expo start",
+		"android": "expo start --android",
+		"ios": "expo start --ios",
+		"web": "expo start --web"
+	},
+	"dependencies": {
+		"@expo/webpack-config": "^18.0.1",
+		"@react-native-community/geolocation": "^3.0.6",
+		"@react-navigation/native": "^6.1.7",
+		"@react-navigation/stack": "^6.3.17",
+		"@rneui/base": "^4.0.0-rc.7",
+		"@rneui/themed": "^4.0.0-rc.8",
+		"axios": "^1.4.0",
+		"expo": "^48.0.20",
+		"expo-location": "~15.1.1",
+		"expo-status-bar": "~1.4.4",
+		"react": "18.2.0",
+		"react-dom": "18.2.0",
+		"react-native": "0.71.8",
+		"react-native-flex-layout": "^0.1.5",
+		"react-native-iconify": "^0.2.10",
+		"react-native-maps": "1.7.1",
+		"react-native-web": "~0.18.10"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.20.0"
+	},
+	"private": true,
+	"author": "Varun Pasupuleti, Sanya Shetty",
+	"license": "ISC",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/vjz3qz/defib-radar.git"
+	},
+	"bugs": {
+		"url": "https://github.com/vjz3qz/defib-radar/issues"
+	},
+	"homepage": "https://github.com/vjz3qz/defib-radar#readme"
 }
