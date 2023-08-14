@@ -8,7 +8,7 @@ export default function Markers({ onMarkerPress }) {
 	return markers.map((marker, index) => (
 		<Marker
 			key={marker.id || index}
-			coordinate={marker.latlng}
+			coordinate={{ latitude: marker.latitude, longitude: marker.longitude }}
 			title={marker.name}
 			description={marker.description}
 			onPress={() => (onMarkerPress ? onMarkerPress(marker) : null)}

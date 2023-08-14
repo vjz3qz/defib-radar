@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import polyline from "@mapbox/polyline";
 import sampleData from "../data/mockDirections";
+import Config from 'react-native-config';
 
 export const useRoute = () => {
 	const mockApiResponse = sampleData;
@@ -52,10 +53,10 @@ export const useRoute = () => {
 		try {
 			// GET ROUTE DATA
 			// const response = await axios.get(
-			// 	`${process.env.ROUTING_URL}?destination=${endLat + "," + endLng}
+			// 	`${Config.ROUTE_URL}?destination=${endLat + "," + endLng}
 			// &mode=${walking ? "walking" : "driving"}
 			// &origin=${startLat + "," + startLng}
-			// &key=${process.env.GOOGLE_MAPS_API_KEY}`
+			// &key=${Config.GOOGLE_MAPS_API_KEY}`
 			// );
 
 			// SET ROUTE

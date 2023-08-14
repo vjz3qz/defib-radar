@@ -13,8 +13,11 @@
 - [ ] Open Data DC API
     - [x] Fetch Defibrillator data
     - [x] Parse data and store in postgres (Varun)
-    - [ ] endpoint that serves AED data to frontend, set up proxy in package.json, test if working with front end display (Varun)
+    - [x] endpoint that serves AED data to frontend, 
+    - [x] test if working with front end display (Varun)
+    - [ ] set up proxy in package.json, 
     - [ ] Pagination: only send closest 10 AEDs to frontend
+    - [ ] set up caching
 - [ ] Frontend
     - [x] Display Map in frontend
     - [x] Display loading screen before data/current location gets rendered

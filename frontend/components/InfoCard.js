@@ -59,8 +59,8 @@ function InfoCard({ data, handleButtonPress, handleXPress }) {
 							onPress={() =>
 								handleButtonPress(
 									true,
-									data.latlng.latitude,
-									data.latlng.longitude
+									data.latitude,
+									data.longitude
 								)
 							}
 						></Button>
@@ -88,8 +88,8 @@ function InfoCard({ data, handleButtonPress, handleXPress }) {
 							onPress={() =>
 								handleButtonPress(
 									false,
-									data.latlng.latitude,
-									data.latlng.longitude
+									data.latitude,
+									data.longitude
 								)
 							}
 						></Button>
