@@ -87,8 +87,7 @@ WSGI_APPLICATION = "defib_radar.wsgi.application"
 
 
 DATABASES = {
-    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL')),
-    'local': {
+    'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': os.environ.get("DB_NAME"),
         'USER': os.environ.get("DB_USERNAME"),
