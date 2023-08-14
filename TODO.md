@@ -14,6 +14,7 @@
     - [x] Fetch Defibrillator data
     - [x] Parse data and store in postgres (Varun)
     - [ ] endpoint that serves AED data to frontend, set up proxy in package.json, test if working with front end display (Varun)
+    - [ ] Pagination: only send closest 10 AEDs to frontend
 - [ ] Frontend
     - [x] Display Map in frontend
     - [x] Display loading screen before data/current location gets rendered
