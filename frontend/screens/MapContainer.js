@@ -4,6 +4,7 @@ import InfoCard from "../components/InfoCard";
 import Map from "../components/Map";
 import { useRoute } from "../utils/useRoute";
 import { useCurrentLocation } from "../utils/useCurrentLocation";
+import Directions from "../components/Directions";
 
 export default function MapContainer() {
 	const { getCurrentLocation } = useCurrentLocation();
@@ -27,6 +28,7 @@ export default function MapContainer() {
 
 	return (
 		<View style={{ flex: 1 }}>
+			{/* <Directions></Directions> */}
 			{/* {showDirections && routeDetails.directions} create a Directions.js to display. also a way to exit showing directions, show eta/time left below? */}
 			<Map
 				onMarkerPress={showDirections ? null : handleMarkerPress}

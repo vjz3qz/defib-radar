@@ -5,8 +5,9 @@ import MapContainer from "./screens/MapContainer";
 import LoadingScreen from "./screens/LoadingScreen";
 import { useMarkers } from "./utils/useMarkers";
 import { useCurrentLocation } from "./utils/useCurrentLocation";
+import Directions from "./components/Directions";
 
-export default function Appn() {
+export default function App() {
 	const { locationIsLoading } = useCurrentLocation();
 	const { markersIsLoading } = useMarkers();
 
