@@ -3,20 +3,7 @@ import axios from "axios";
 
 export const useMarkers = () => {
 	const [isLoading, setIsLoading] = useState(true);
-	const [markers, setMarkers] = useState([
-		{
-			name: "Apple",
-			description:
-				"Apple Park is Apple's corporate headquarters located in Cupertino, California, United States.",
-			latlng: {
-				latitude: 37.330928,
-				longitude: -122.007866,
-			},
-			address_line1: "1 Apple Park Way",
-			city: "Cupertino",
-			state: "CA",
-		},
-	]);
+	const [markers, setMarkers] = useState([]);
 
 	useEffect(() => {
 		fetchMarkers().finally(() => setIsLoading(false));
