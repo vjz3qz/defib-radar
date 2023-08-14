@@ -13,6 +13,9 @@ class Defibrillator(models.Model):
     zipcode = models.CharField(max_length=255)
     latitude = models.FloatField()
     longitude = models.FloatField()
+    description = models.TextField(null=True, blank=True)
+
+
     
 
     def _str_(self):

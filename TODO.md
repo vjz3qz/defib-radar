@@ -41,6 +41,35 @@
 
 <!-- 
 
+
+
+BACKEND
+PROBLEM: must periodically run update script to fetch new data from Open Data DC API and update database:(backend) bash-3.2$ python manage.py update_defibrillators
+
+Cron Jobs (Linux servers):
+If you deploy your backend on a Linux server, you can use cron to schedule the command to run at regular intervals. First, open the cron table for editing:
+
+Copy code
+crontab -e
+Then, add a line specifying when you want the command to run. For example, to run it daily at midnight:
+
+bash
+Copy code
+0 0 * * * /path/to/your/python /path/to/your/manage.py update_defibrillators
+Heroku:
+If you're deploying on Heroku, you can use the Heroku Scheduler add-on. After adding it to your app, you can set up the command to run at specified intervals.
+
+AWS Elastic Beanstalk:
+If you're using AWS Elastic Beanstalk, you can use cron.yaml to specify recurring tasks.
+
+Django Packages:
+You can also use Django packages like django-crontab or celery to manage scheduled tasks directly within your Django app.
+
+No matter what method you choose, ensure your environment variables (like API_URL) are correctly set in the production environment, especially if you're relying on .env files during local development.
+
+
+
+
 Static Route Line: Display the route line on the map from the start to the destination. This gives users a visual representation of the path to follow.
 
 
