@@ -15,7 +15,7 @@
     - [x] Parse data and store in postgres (Varun)
     - [x] endpoint that serves AED data to frontend, 
     - [x] test if working with front end display (Varun)
-    - [ ] set up proxy in package.json, 
+    - [ ] set up proxy in package.json and/or move google api key functionality to backend
     - [ ] Pagination: only send closest 10 AEDs to frontend
     - [ ] set up caching
 - [ ] Frontend
