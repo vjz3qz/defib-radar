@@ -5,7 +5,7 @@ import Config from 'react-native-config';
 export const useMarkers = () => {
 	const [isLoading, setIsLoading] = useState(true);
 	const [markers, setMarkers] = useState([]);
-	const url = Config.BACKEND_URL;
+	const url = "http://localhost:8000/api/defibrillators/";
 	console.log("Config: ", Config);
 	console.log("URL:", url);
 
