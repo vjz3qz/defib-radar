@@ -1,36 +1,48 @@
 # TODO
-
-- [x] Models/Database
-  - [x] create Defibrillator model
-  - [x] run migrations to create tables
-  - [x] ensure database set up in settings.py
-  - [x] Add json serializer for Defibrillator
-- [ ] Views/Routes/APIs
-  - [ ] learn about views
-  - [ ] learn about MVC architecture
-  - [x] create class based views for Defibrillator HTTP CRUD ops
-  - [x] define URLS for views to URL config in url.py
-- [ ] Open Data DC API
+-[ ] Backend
+  - [x] Models/Database
+    - [x] create Defibrillator model
+    - [x] run migrations to create tables
+    - [x] ensure database set up in settings.py
+    - [x] Add json serializer for Defibrillator
+  - [ ] Views/Routes/APIs
+    - [ ] learn about views
+    - [ ] learn about MVC architecture
+    - [x] create class based views for Defibrillator HTTP CRUD ops
+    - [x] define URLS for views to URL config in url.py
+  - [ ] Open Data DC API
     - [x] Fetch Defibrillator data
     - [x] Parse data and store in postgres (Varun)
     - [x] endpoint that serves AED data to frontend, 
     - [x] test if working with front end display (Varun)
-    - [ ] set up proxy in package.json and/or move google api key functionality to backend
+  - [ ] Google Maps API
+    - [x] move google api key functionality to backend
+    - [ ] Parse response URL to get route coordinates (Sanya)
     - [ ] Pagination: only send closest 10 AEDs to frontend
     - [ ] set up caching
 - [ ] Frontend
     - [x] Display Map in frontend
-    - [x] Display loading screen before data/current location gets rendered
-    - [ ] Enable routing: current location to destination coordinate
-      - [x] Fix so that routing shows up at current location, not last updated loc. route button should trigger getting loc again (Varun)
-        - [ ] Poentially add transition get current location and polyline
-      - [ ] Parse response URL to get route coordinates (Sanya)
-      - [ ] Display directions directions.js (Sanya)
-      - [x] Add button to get current location (Varun)
     - [x] support CRUD ops to backend: get list
-    - [ ] React components
-    - [ ] Clean and refactor code
-    - [ ] styling
+    - [x] Display loading screen before data/current location gets rendered
+    - [ ] use expo managed .env file to store backend url
+    - [ ] Routing
+      - [x] Fix real-time routing with current location (Varun)
+      - [ ] Get Directions from backend in useRoute hook (Sanya)
+      - [ ] Display directions directions.js (Sanya)
+    - [x] Add recenter button (Varun)
+  - [ ] Cleaning & Refactoring
+    - [ ] Extract react components
+    - [ ] Extract styles
+    - [ ] Extract constants
+    - [ ] Extract hooks
+    - [ ] Extract utils
+    - [ ] Make sure code modularization makes sense
+    - [ ] Ensure code is DRY
+    - [ ] Ensure code is readable
+    - [ ] Document code
+    - [ ] Format code (prettier)
+    - [ ] Styling
+    - [ ] Add transition get current location and polyline
 - [ ] Testing
     - [ ] Write tests for Django views
     - [ ] Write tests for React components 
