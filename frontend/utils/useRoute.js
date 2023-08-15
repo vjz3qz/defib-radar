@@ -52,12 +52,11 @@ export const useRoute = () => {
 	) => {
 		try {
 			// GET ROUTE DATA
-			// const response = await axios.get(
-			// 	`${Config.ROUTE_URL}?destination=${endLat + "," + endLng}
-			// &mode=${walking ? "walking" : "driving"}
-			// &origin=${startLat + "," + startLng}
-			// &key=${Config.GOOGLE_MAPS_API_KEY}`
-			// );
+			// ADD URL TO CONFIG FILE and ADD URL BUILDING
+			//const baseUrl = Config.BASE_URL;
+			const url = `http://localhost:8000/api/directions/?walking=walking&startLat=startLat&startLng=startLng&endLat=endLat&endLng=endLng`;
+			
+			// const response = await axios.get(url);
 
 			// SET ROUTE
 			const routeDetail = parseResponse(mockApiResponse);
@@ -65,14 +64,6 @@ export const useRoute = () => {
 		} catch (error) {
 			console.log("Error fetching data:", error);
 		}
-
-		// const route = {
-		// 	coordinates: [
-		// 		{ latitude: startLat, longitude: startLng },
-		// 		{ latitude: endLat, longitude: endLng },
-		// 	],
-		// };
-		// setRouteDetails(getRouteDetails().coordinates); // remove this hard coded set route details later
 	};
 
 	return { routeDetails, setRouteDetails, getRouteDetails };

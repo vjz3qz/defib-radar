@@ -16,6 +16,9 @@ class DefibrillatorView(viewsets.ModelViewSet):
     queryset = Defibrillator.objects.all()
 
 class GoogleMapsDirections(APIView):
+    def parse_response(self, response): # ADD LOGIC
+        return response
+
     def get(self, request, *args, **kwargs):
         ROUTE_URL = os.environ.get('ROUTE_URL')
         GOOGLE_MAPS_API_KEY = os.environ.get('GOOGLE_MAPS_API_KEY')
@@ -30,6 +33,7 @@ class GoogleMapsDirections(APIView):
         try:
             response = requests.get(url)
             response.raise_for_status()
-            return Response(response.json(), status=status.HTTP_200_OK)
+            parsed_data = parse_response(response.json())
+            return Response(parsed_data, status=status.HTTP_200_OK)
         except requests.RequestException as e:
             return Response({"error": "There was an issue fetching data from Google Maps Directions API.", "detail": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
