@@ -25,4 +25,5 @@ router.register(r'defibrillators', views.DefibrillatorView, 'defibrillator')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
+    path('api/directions/', views.GoogleMapsDirections.as_view(), name='google-maps-directions'),
 ]
