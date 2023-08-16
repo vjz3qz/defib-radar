@@ -52,9 +52,9 @@ export const useRoute = () => {
 	) => {
 		try {
 			// GET ROUTE DATA
-			// ADD URL TO CONFIG FILE and ADD URL BUILDING
+			// ADD BASE URL TO CONFIG FILE
 			//const baseUrl = Config.BASE_URL;
-			const url = `http://localhost:8000/api/directions/?walking=walking&startLat=startLat&startLng=startLng&endLat=endLat&endLng=endLng`;
+			const url = `http://localhost:8000/api/directions/?walking=${walking}&startLat=${startLat}&startLng=${startLng}&endLat=${endLat}&endLng=${endLng}`;
 			
 			// const response = await axios.get(url);
 

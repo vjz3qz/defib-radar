@@ -27,7 +27,7 @@
     - [ ] use expo managed .env file to store backend url
     - [ ] Routing
       - [x] Fix real-time routing with current location (Varun)
-      - [ ] Get Directions from backend in useRoute hook (Sanya)
+      - [x] Develop url building logic to get Directions from backend in useRoute hook (Varun)
       - [ ] Display directions directions.js (Sanya)
     - [x] Add recenter button (Varun)
   - [ ] Cleaning & Refactoring
