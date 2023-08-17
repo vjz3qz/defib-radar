@@ -29,6 +29,7 @@
       - [x] Fix real-time routing with current location (Varun)
       - [x] Develop url building logic to get Directions from backend in useRoute hook (Varun)
       - [ ] Display directions directions.js (Sanya)
+    - [ ] Add button to get nearest aed upon click
     - [x] Add recenter button (Varun)
   - [ ] Cleaning & Refactoring
     - [ ] Extract react components
