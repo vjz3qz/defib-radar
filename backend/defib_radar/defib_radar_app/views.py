@@ -57,7 +57,7 @@ class GoogleMapsDirections(APIView):
         try:
             response = requests.get(url)
             response.raise_for_status()
-            parsed_data = parse_response(response.json())
+            parsed_data = self.parse_response(response.json())
             return Response(parsed_data, status=status.HTTP_200_OK)
         except requests.RequestException as e:
             return Response({"error": "There was an issue fetching data from Google Maps Directions API.", "detail": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

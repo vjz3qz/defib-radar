@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import polyline from "@mapbox/polyline";
 import sampleData from "../data/mockDirections";
-import Config from 'react-native-config';
+import Config from "react-native-config";
 
 export const useRoute = () => {
 	const mockApiResponse = sampleData;
@@ -55,10 +55,11 @@ export const useRoute = () => {
 			// ADD BASE URL TO CONFIG FILE
 			//const baseUrl = Config.BASE_URL;
 			const url = `http://localhost:8000/api/directions/?walking=${walking}&startLat=${startLat}&startLng=${startLng}&endLat=${endLat}&endLng=${endLng}`;
-			
+
 			// const response = await axios.get(url);
 
 			// SET ROUTE
+			// const routeDetail = response;
 			const routeDetail = parseResponse(mockApiResponse);
 			setRouteDetails(routeDetail);
 		} catch (error) {
