@@ -57,11 +57,7 @@ function InfoCard({ data, handleButtonPress, handleXPress }) {
 							]}
 							title={"Walk"} // add time
 							onPress={() =>
-								handleButtonPress(
-									true,
-									data.latitude,
-									data.longitude
-								)
+								handleButtonPress(true, data.latitude, data.longitude)
 							}
 						></Button>
 						<Button
@@ -86,11 +82,7 @@ function InfoCard({ data, handleButtonPress, handleXPress }) {
 							]}
 							title={"Drive"} // add time
 							onPress={() =>
-								handleButtonPress(
-									false,
-									data.latitude,
-									data.longitude
-								)
+								handleButtonPress(false, data.latitude, data.longitude)
 							}
 						></Button>
 					</HStack>

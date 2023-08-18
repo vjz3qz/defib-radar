@@ -30,6 +30,7 @@ export default function MapContainer() {
 		<View style={{ flex: 1 }}>
 			{/* <Directions></Directions> */}
 			{/* {showDirections && routeDetails.directions} create a Directions.js to display. also a way to exit showing directions, show eta/time left below? */}
+
 			<Map
 				onMarkerPress={showDirections ? null : handleMarkerPress}
 				coordinates={
@@ -45,6 +46,11 @@ export default function MapContainer() {
 					/>
 				</View>
 			)}
+			{showDirections && (
+				<View style={styles.directionsContainer}>
+					<Directions />
+				</View>
+			)}
 		</View>
 	);
 }
@@ -58,6 +64,14 @@ const styles = StyleSheet.create({
 	infoCardContainer: {
 		position: "absolute",
 		bottom: 0,
+		left: 0,
+		right: 0,
+		padding: 10,
+		margin: 10,
+	},
+	directionsContainer: {
+		position: "absolute",
+		top: 50,
 		left: 0,
 		right: 0,
 		padding: 10,

@@ -1,9 +1,41 @@
-import React from "react";
-import { View, Text, StyleSheet, FlatList } from "react-native";
+import { React, useState } from "react";
+import { View, Text, StyleSheet, Button } from "react-native";
 import { useRoute } from "../utils/useRoute";
 
 const Directions = () => {
-	const { routeDetails, getRouteDetails } = useRoute();
+	// const { routeDetails, getRouteDetails } = useRoute();
+
+	const [directionIndex, setDirectionIndex] = useState(0);
+
+	const handleNextClick = () => {
+		setDirectionIndex((prevIndex) => prevIndex + 1);
+	};
+
+	// mock data for testing
+	routeDetails = {
+		directions: [
+			{
+				maneuver: "turn-left",
+				instruction: "Turn left at Main St.",
+				distance: "0.5 miles",
+			},
+			{
+				maneuver: "turn-right",
+				instruction: "Turn right at Elm St.",
+				distance: "1.2 miles",
+			},
+			{
+				maneuver: "merge",
+				instruction: "Merge onto Highway 50 via the ramp on the right.",
+				distance: "5.3 miles",
+			},
+			{
+				maneuver: "destination",
+				instruction: "Your destination is on the right.",
+				distance: "0.2 miles",
+			},
+		],
+	};
 
 	if (
 		!routeDetails ||
@@ -15,25 +47,28 @@ const Directions = () => {
 				<Text>Loading directions...</Text>
 			</View>
 		);
+	} else if (directionIndex < routeDetails.directions.length) {
+		const currentDirection = routeDetails.directions[directionIndex];
+		return (
+			<View style={styles.container}>
+				<Text style={styles.header}>Directions:</Text>
+				<View style={styles.directionItem}>
+					<Text style={styles.maneuver}>
+						Maneuver: {currentDirection.maneuver}
+					</Text>
+					<Text>Instruction: {currentDirection.instruction}</Text>
+					<Text>Distance: {currentDirection.distance}</Text>
+				</View>
+				<Button title="Next" onPress={handleNextClick} />
+			</View>
+		);
+	} else {
+		return (
+			<View style={styles.container}>
+				<Text>You've reached your destination</Text>
+			</View>
+		);
 	}
-
-	return (
-		<View>
-			<Text>Test</Text>
-			<Text style={styles.header}>Directions:</Text>
-			<FlatList
-				data={routeDetails.directions}
-				keyExtractor={(item, index) => index.toString()}
-				renderItem={({ item }) => (
-					<View style={styles.directionItem}>
-						<Text style={styles.maneuver}>Maneuver: {item.maneuver}</Text>
-						<Text>Instruction: {item.instruction}</Text>
-						<Text>Distance: {item.distance}</Text>
-					</View>
-				)}
-			/>
-		</View>
-	);
 };
 
 const styles = StyleSheet.create({
@@ -43,6 +78,8 @@ const styles = StyleSheet.create({
 		left: 0,
 		right: 0,
 		padding: 10,
+		height: 120,
+		borderRadius: 10,
 		backgroundColor: "white",
 		borderBottomWidth: 1,
 		borderBottomColor: "#ddd",
