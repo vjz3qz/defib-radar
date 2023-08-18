@@ -7,6 +7,7 @@ from rest_framework.response import Response
 from rest_framework import status
 import requests
 import os
+import polyline
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -17,7 +18,30 @@ class DefibrillatorView(viewsets.ModelViewSet):
 
 class GoogleMapsDirections(APIView):
     def parse_response(self, response): # ADD LOGIC
-        return response
+        # checks if a response was received and the status is 'OK'
+        if (not(response) or response['status'] != 'OK'):
+            return []
+    
+        # the first route listed is the most optimal
+        route = response['routes'][0]
+        leg = route['legs'][0]
+        coordinates = []
+        directions = []
+
+        for step in leg['steps']:
+            # gets all points along the route
+            decoded_points = polyline.decode(step['polyline']['points']) 
+            #gets details about directinos to be provided to Directions.js component
+            direction_detail = {'distance': step['distance']['text'], 'instruction': step['html_instructions'], 'maneuver': step['maneuver']}
+
+            directions.append(direction_detail)
+            for point in decoded_points:
+                # adds coordinate of each point along the route to coordinates array
+                coordinates.append({'latitude': point[0], 'longitude': point[1]})
+        last_step = leg['steps'][len(leg['steps']) - 1]
+        coordinates.append({'latitude': last_step['end_location']['lat'], 'longitude': last_step['end_location']['lng']})
+
+        return [coordinates, directions]
 
     def get(self, request, *args, **kwargs):
         ROUTE_URL = os.environ.get('ROUTE_URL')
