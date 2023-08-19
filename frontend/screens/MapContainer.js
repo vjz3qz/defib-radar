@@ -48,7 +48,11 @@ export default function MapContainer() {
 			)}
 			{showDirections && (
 				<View style={styles.directionsContainer}>
-					<Directions />
+					<Directions
+						directions={
+							showDirections && routeDetails ? routeDetails.directions : null
+						}
+					/>
 				</View>
 			)}
 		</View>

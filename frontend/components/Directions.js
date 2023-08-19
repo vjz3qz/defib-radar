@@ -1,54 +1,50 @@
 import { React, useState } from "react";
 import { View, Text, StyleSheet, Button } from "react-native";
 import { useRoute } from "../utils/useRoute";
+import { Iconify } from "react-native-iconify";
 
-const Directions = () => {
-	// const { routeDetails, getRouteDetails } = useRoute();
-
+const Directions = (directions) => {
 	const [directionIndex, setDirectionIndex] = useState(0);
 
 	const handleNextClick = () => {
 		setDirectionIndex((prevIndex) => prevIndex + 1);
 	};
 
-	// mock data for testing
-	routeDetails = {
-		directions: [
-			{
-				maneuver: "turn-left",
-				instruction: "Turn left at Main St.",
-				distance: "0.5 miles",
-			},
-			{
-				maneuver: "turn-right",
-				instruction: "Turn right at Elm St.",
-				distance: "1.2 miles",
-			},
-			{
-				maneuver: "merge",
-				instruction: "Merge onto Highway 50 via the ramp on the right.",
-				distance: "5.3 miles",
-			},
-			{
-				maneuver: "destination",
-				instruction: "Your destination is on the right.",
-				distance: "0.2 miles",
-			},
-		],
-	};
+	// // mock data for testing
+	// routeDetails = {
+	// 	directions: [
+	// 		{
+	// 			maneuver: "turn-left",
+	// 			instruction: "Turn left at Main St.",
+	// 			distance: "0.5 miles",
+	// 		},
+	// 		{
+	// 			maneuver: "turn-right",
+	// 			instruction: "Turn right at Elm St.",
+	// 			distance: "1.2 miles",
+	// 		},
+	// 		{
+	// 			maneuver: "merge",
+	// 			instruction: "Merge onto Highway 50 via the ramp on the right.",
+	// 			distance: "5.3 miles",
+	// 		},
+	// 		{
+	// 			maneuver: "destination",
+	// 			instruction: "Your destination is on the right.",
+	// 			distance: "0.2 miles",
+	// 		},
+	// 	],
+	// };
 
-	if (
-		!routeDetails ||
-		!routeDetails.directions ||
-		routeDetails.directions.length === 0
-	) {
+	if (!directions || directions.length === 0) {
 		return (
 			<View style={styles.loadingContainer}>
 				<Text>Loading directions...</Text>
 			</View>
 		);
-	} else if (directionIndex < routeDetails.directions.length) {
-		const currentDirection = routeDetails.directions[directionIndex];
+	} else if (directionIndex < directions.length) {
+		const currentDirection = directions[directionIndex];
+		const manuever = "mdi:turn-left";
 		return (
 			<View style={styles.container}>
 				<Text style={styles.header}>Directions:</Text>
@@ -56,6 +52,7 @@ const Directions = () => {
 					<Text style={styles.maneuver}>
 						Maneuver: {currentDirection.maneuver}
 					</Text>
+					<Iconify icon="mdi:turn-left" size={24} color="#000000" />
 					<Text>Instruction: {currentDirection.instruction}</Text>
 					<Text>Distance: {currentDirection.distance}</Text>
 				</View>
