@@ -54,7 +54,8 @@
     - [ ] Set up production database
     - [ ] Migrate data
 
-
+enable views
+public devices like fire extinguishers
 
 <!-- 
 
