@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { View } from "react-native";
 import InfoCard from "../components/InfoCard";
 import Map from "../components/Map";
@@ -50,7 +50,7 @@ export default function MapContainer() {
 				<View style={styles.directionsContainer}>
 					<Directions
 						directions={
-							showDirections && routeDetails ? routeDetails.directions : null
+							showDirections && routeDetails && routeDetails.directions ? routeDetails.directions : null
 						}
 					/>
 				</View>

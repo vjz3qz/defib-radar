@@ -1,9 +1,10 @@
 import { React, useState } from "react";
-import { View, Text, StyleSheet, Button } from "react-native";
+import { View, Text, StyleSheet, Button, useWindowDimensions } from "react-native";
 import { useRoute } from "../utils/useRoute";
 import { Iconify } from "react-native-iconify";
+import RenderHTML from 'react-native-render-html';
 
-const Directions = (directions) => {
+const Directions = ({directions}) => {
 	const [directionIndex, setDirectionIndex] = useState(0);
 
 	const handleNextClick = () => {
@@ -36,6 +37,9 @@ const Directions = (directions) => {
 	// 	],
 	// };
 
+
+	const window = useWindowDimensions();
+	const contentWidth = window.width;
 	if (!directions || directions.length === 0) {
 		return (
 			<View style={styles.loadingContainer}>
@@ -53,7 +57,12 @@ const Directions = (directions) => {
 						Maneuver: {currentDirection.maneuver}
 					</Text>
 					<Iconify icon="mdi:turn-left" size={24} color="#000000" />
-					<Text>Instruction: {currentDirection.instruction}</Text>
+					<View style={{ flexDirection: 'row', alignItems: 'center' }}>
+      <Text>Instruction: </Text>
+      <RenderHTML   contentWidth={contentWidth} source={{ html: currentDirection.instruction }} />
+    </View>
+
+
 					<Text>Distance: {currentDirection.distance}</Text>
 				</View>
 				<Button title="Next" onPress={handleNextClick} />

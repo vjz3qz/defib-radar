@@ -28,6 +28,7 @@
 		"react-native-flex-layout": "^0.1.5",
 		"react-native-iconify": "^0.2.10",
 		"react-native-maps": "1.7.1",
+		"react-native-render-html": "^6.3.4",
 		"react-native-web": "~0.18.10"
 	},
 	"devDependencies": {

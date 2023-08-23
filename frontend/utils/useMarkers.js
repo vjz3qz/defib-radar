@@ -6,8 +6,6 @@ export const useMarkers = () => {
 	const [isLoading, setIsLoading] = useState(true);
 	const [markers, setMarkers] = useState([]);
 	const url = "http://localhost:8000/api/defibrillators/";
-	console.log("Config: ", Config);
-	console.log("URL:", url);
 
 
 	useEffect(() => {
