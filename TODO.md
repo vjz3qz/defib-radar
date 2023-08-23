@@ -17,7 +17,7 @@
     - [x] test if working with front end display (Varun)
   - [ ] Google Maps API
     - [x] move google api key functionality to backend
-    - [ ] Parse response URL to get route coordinates (Sanya)
+    - [x] Parse response URL to get route coordinates (Sanya)
     - [ ] Pagination: only send closest 10 AEDs to frontend
     - [ ] set up caching
 - [ ] Frontend
@@ -28,9 +28,27 @@
     - [ ] Routing
       - [x] Fix real-time routing with current location (Varun)
       - [x] Develop url building logic to get Directions from backend in useRoute hook (Varun)
-      - [ ] Display directions directions.js (Sanya)
+      - [x] Display directions directions.js (Sanya)
     - [ ] Add button to get nearest aed upon click
     - [x] Add recenter button (Varun)
+    - [ ] Styling
+      - [ ] Fix directions overflow
+      - [ ] fix recenter button to come above card
+      - [ ] Try adding animation to recenter button, cards, directions, etc.
+- [ ] Deployment
+  - [ ] Enable API keys and test app
+  - [ ] Deploy to AWS
+
+
+
+
+
+    - [ ] script that regularly fetches and updates data: Cron Job
+    - [ ] Set up production database
+    - [ ] Migrate data
+
+
+
   - [ ] Cleaning & Refactoring
     - [ ] Extract react components
     - [ ] Extract styles
@@ -48,11 +66,7 @@
     - [ ] Write tests for Django views
     - [ ] Write tests for React components 
     - [ ] Write tests for Google Maps API
-- [ ] Deployment
-    - [ ] Deploy to AWS
-    - [ ] script that regularly fetches and updates data: Cron Job
-    - [ ] Set up production database
-    - [ ] Migrate data
+
 
 enable views
 public devices like fire extinguishers
