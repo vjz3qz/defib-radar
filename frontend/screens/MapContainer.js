@@ -52,6 +52,7 @@ export default function MapContainer() {
 						directions={
 							showDirections && routeDetails && routeDetails.directions ? routeDetails.directions : null
 						}
+						handleXPress={() => setShowDirections(false)}
 					/>
 				</View>
 			)}

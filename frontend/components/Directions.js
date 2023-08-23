@@ -10,7 +10,7 @@ import { useRoute } from "../utils/useRoute";
 import { Iconify } from "react-native-iconify";
 import RenderHTML from "react-native-render-html";
 
-const Directions = ({ directions }) => {
+const Directions = ({ directions, handleXPress }) => {
   const [directionIndex, setDirectionIndex] = useState(0);
 
   const handleNextClick = () => {
@@ -30,6 +30,7 @@ const Directions = ({ directions }) => {
     const manuever = "mdi:turn-left";
     return (
       <View style={styles.container}>
+	  <Button title="X" onPress={handleXPress} buttonStyle={styles.exitButton}/>
         <Text style={styles.header}>Directions:</Text>
         <View style={styles.directionItem}>
           <Text style={styles.maneuver}>
@@ -87,6 +88,12 @@ const styles = StyleSheet.create({
   maneuver: {
     fontWeight: "bold",
   },
+  exitButton: {
+	  backgroundColor: "#4285F4",
+	  width: 36,
+	  height: 36,
+	  borderRadius: 20,
+  }
 });
 
 export default Directions;

@@ -29,8 +29,9 @@
       - [x] Fix real-time routing with current location (Varun)
       - [x] Develop url building logic to get Directions from backend in useRoute hook (Varun)
       - [x] Display directions directions.js (Sanya)
-    - [ ] Add button to get nearest aed upon click
     - [x] Add recenter button (Varun)
+    - [x] Add button to exit directions
+    - [ ] Add button to get nearest aed upon click
     - [ ] Styling
       - [ ] Fix directions overflow
       - [ ] fix recenter button to come above card
