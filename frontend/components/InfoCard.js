@@ -22,18 +22,11 @@ function InfoCard({ data, handleButtonPress, handleXPress }) {
 					</Text>
 				</View>
 
-				{/* <View style={styles.infoBox}>
-          <Text style={styles.header}>{"Description"}</Text>
-          <Text style={styles.details}>{"Description here"}</Text>
-        </View> */}
+				<View style={styles.infoBox}>
+					<Text style={styles.header}>{"Description"}</Text>
+					<Text style={styles.details}>{data.description}</Text>
+				</View>
 				<View style={styles.buttonContainer}>
-					{/* <Button
-            buttonStyle={[
-              styles.button,
-              { backgroundColor: "#EA4335", width: 320 },
-            ]}
-            title={"Not Available"}
-          ></Button> */}
 					<HStack spacing={8} justifyContent="center">
 						<Button
 							icon={
