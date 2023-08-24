@@ -8,9 +8,14 @@ import { Iconify } from "react-native-iconify";
 function InfoCard({ data, handleButtonPress, handleXPress }) {
 	return (
 		<View style={styles.card}>
-			<Button onPress={handleXPress} buttonStyle={styles.exitButton}>
-				X
-			</Button>
+      <View style={styles.headerContainer}>
+        <View style={{flex: 1}}></View>
+        <View style={styles.exitButtonContainer}>
+          <Button onPress={handleXPress} buttonStyle={styles.exitButton}>
+            <Iconify icon="mdi:close" size={18}  color="#808080" />
+          </Button>
+        </View>
+      </View>
 			<View style={styles.infoContainer}>
 				<Text style={styles.title}>{data.name || "Name"}</Text>
 
@@ -22,10 +27,10 @@ function InfoCard({ data, handleButtonPress, handleXPress }) {
 					</Text>
 				</View>
 
-				<View style={styles.infoBox}>
+				{data.description && (<View style={styles.infoBox}>
 					<Text style={styles.header}>{"Description"}</Text>
 					<Text style={styles.details}>{data.description}</Text>
-				</View>
+				</View>)}
 				<View style={styles.buttonContainer}>
 					<HStack spacing={8} justifyContent="center">
 						<Button
@@ -91,68 +96,80 @@ const styles = StyleSheet.create({
 		bottom: 0,
 		left: 0,
 		right: 0,
-		padding: 20,
-		height: 350,
+		padding: 16,
 		backgroundColor: "white",
-		borderTopLeftRadius: 10,
-		borderTopRightRadius: 10,
+		borderTopLeftRadius: 16,
+		borderTopRightRadius: 16,
 		shadowOffset: { width: 0, height: -2 },
-		shadowOpacity: 0.1,
-		shadowRadius: 5,
-	},
+		shadowOpacity: 0.2,
+		shadowRadius: 10,
+		flexWrap: 'wrap', // Wrap content
+		minHeight: 100, // Minimum height of the card
+		maxHeight: 500, // Maximum height of the card
+	  },
 	infoContainer: {
-		width: 337,
-		height: 292,
+	  flex: 1,
 	},
 	infoBox: {
-		width: 335,
-		height: 65,
-		paddingBottom: 10,
-		borderBottomWidth: 2,
-		borderBottomColor: "#EBEBEB",
-		justifyContent: "flex-end",
-		marginTop: 5,
+	  marginBottom: 10,
+	  paddingBottom: 10,
+	  borderBottomWidth: 1,
+	  borderBottomColor: "#EBEBEB",
 	},
 	title: {
-		fontSize: 32,
-		fontWeight: "bold",
-		color: "#1E1E1E",
-		height: 42,
+	  fontSize: 24,
+	  fontWeight: "bold",
+	  color: "#1E1E1E",
+	  marginBottom: 10,
 	},
 	header: {
-		color: "#9D9D9D",
-		fontSize: 12,
-		marginBottom: 20,
+	  color: "#9D9D9D",
+	  fontSize: 14,
+	  marginBottom: 4,
 	},
 	details: {
-		color: "#343434",
-		fontSize: 12,
+	  color: "#343434",
+	  fontSize: 16,
 	},
-	buttonContainer: {
-		width: 320,
-		height: 95,
-		justifyContent: "center",
-		alignSelf: "center",
-		marginTop: 20,
-	},
-	button: {
-		borderRadius: 6,
-		height: 41,
-		marginTop: 10,
-	},
-	iconView: {
-		alignItems: "center",
-		justifyContent: "center",
+	headerContainer: {
+		flexDirection: 'row',
+		alignItems: 'center',
+		marginBottom: 2,
+	  },
+	  exitButtonContainer: {
+		alignSelf: 'flex-end',
+	  },
+	  exitButton: {
+		backgroundColor: "#FFFFFF",
 		width: 24,
 		height: 24,
-		marginRight: 4,
-	},
-	exitButton: {
-		backgroundColor: "#4285F4",
-		width: 36,
-		height: 36,
-		borderRadius: 20,
-	},
-});
+		borderRadius: 18,
+		alignItems: "center",
+		justifyContent: "center",
+	  },
+	  buttonContainer: {
+		flex: 1,
+		flexDirection: 'row',
+		justifyContent: 'space-between',
+		marginTop: 2,
+	  },
+	  button: {
+		flex: 1,
+		height: 44,  // Increased height
+		borderRadius: 6,
+		justifyContent: 'center', // Center items vertically
+		alignItems: 'center', // Center items horizontally
+		flexDirection: 'row',  // This is to place the icon and the title side-by-side
+		margin: 8,  // Added some margin for better spacing between buttons
+	  },
+	  iconView: {
+		alignItems: 'center',  // Align items centered
+		justifyContent: 'center',  // Justify content centered
+		width: 24,
+		height: 24,
+		marginRight: 12,  // Added some margin to separate it from the title
+	  },
+  });
+  
 
 export default InfoCard;
