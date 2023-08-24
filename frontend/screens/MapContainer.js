@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
 	},
 	directionsContainer: {
 		position: "absolute",
-		top: 50,
+		top: 5,
 		left: 0,
 		right: 0,
 		padding: 10,

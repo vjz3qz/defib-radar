@@ -60,7 +60,7 @@ export default function Map({ onMarkerPress, coordinates }) {
 const styles = StyleSheet.create({
 	recenterButton: {
 		position: "absolute",
-		bottom: 10,
+		bottom: 35,
 		right: 10,
 		backgroundColor: "white",
 		borderRadius: 20,
