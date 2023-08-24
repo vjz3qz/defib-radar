@@ -50,7 +50,7 @@ function InfoCard({ data, handleButtonPress, handleXPress }) {
 								{
 									backgroundColor: "#4285F4",
 									width: 156,
-									justifyContent: "left",
+									justifyContent: "center",
 								},
 							]}
 							title={"Walk"} // add time
@@ -75,7 +75,7 @@ function InfoCard({ data, handleButtonPress, handleXPress }) {
 								{
 									backgroundColor: "#4285F4",
 									width: 156,
-									justifyContent: "left",
+									justifyContent: "center",
 								},
 							]}
 							title={"Drive"} // add time
@@ -103,9 +103,9 @@ const styles = StyleSheet.create({
 		shadowOffset: { width: 0, height: -2 },
 		shadowOpacity: 0.2,
 		shadowRadius: 10,
-		flexWrap: 'wrap', // Wrap content
-		minHeight: 100, // Minimum height of the card
-		maxHeight: 500, // Maximum height of the card
+		flexWrap: 'wrap', 
+		minHeight: 100, 
+		maxHeight: 500, 
 	  },
 	infoContainer: {
 	  flex: 1,
@@ -155,19 +155,19 @@ const styles = StyleSheet.create({
 	  },
 	  button: {
 		flex: 1,
-		height: 44,  // Increased height
+		height: 44, 
 		borderRadius: 6,
-		justifyContent: 'center', // Center items vertically
-		alignItems: 'center', // Center items horizontally
-		flexDirection: 'row',  // This is to place the icon and the title side-by-side
-		margin: 8,  // Added some margin for better spacing between buttons
+		justifyContent: 'center',
+		alignItems: 'center', 
+		flexDirection: 'row', 
+		margin: 8, 
 	  },
 	  iconView: {
-		alignItems: 'center',  // Align items centered
-		justifyContent: 'center',  // Justify content centered
+		alignItems: 'center', 
+		justifyContent: 'center',  
 		width: 24,
 		height: 24,
-		marginRight: 12,  // Added some margin to separate it from the title
+		marginRight: 12,
 	  },
   });
   
